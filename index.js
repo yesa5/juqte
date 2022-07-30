@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { config } from "dotenv";
+import cors from "cors";
 
 import auth from "./src/controllers/auth.controller.js";
 import { configure } from "./recources/smsc/smsc_api.js";
@@ -18,6 +19,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use("/auth", auth);
 
