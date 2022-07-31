@@ -38,8 +38,24 @@ const User = mongoose.model(
       type: Boolean,
       default: false,
     },
+    company: {
+      name: String,
+      bin: String,
+      account: String,
+      director: {
+        name: String,
+        surname: String,
+        fatherName: String,
+        iin: String,
+        phone: String,
+      },
+      contacts: {
+        address: String,
+        phone: String,
+      },
+    },
   },
-  'users'
+  'users',
 );
 
 export { User };

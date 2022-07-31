@@ -4,6 +4,7 @@ import { config } from "dotenv";
 import cors from "cors";
 
 import auth from "./src/controllers/auth.controller.js";
+import user from "./src/controllers/user.controller.js";
 import { configure } from "./recources/smsc/smsc_api.js";
 
 /**
@@ -22,6 +23,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/auth", auth);
+app.use("/user", user);
 
 app.listen(PORT, () => {
     console.log(`Server started at ${PORT}`);
