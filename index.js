@@ -5,6 +5,7 @@ import cors from "cors";
 
 import auth from "./src/controllers/auth.controller.js";
 import user from "./src/controllers/user.controller.js";
+import order from "./src/controllers/order.controller.js";
 import { configure } from "./recources/smsc/smsc_api.js";
 
 /**
@@ -24,6 +25,7 @@ app.use(cors());
 
 app.use("/auth", auth);
 app.use("/user", user);
+app.use("/orders", order);
 
 app.listen(PORT, () => {
     console.log(`Server started at ${PORT}`);
